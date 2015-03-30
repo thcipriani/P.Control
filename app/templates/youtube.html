@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <h1 id=youtube>YouTube</h1>
+  <form method=POST action=/youtube>
+    <label for=url>URL</label>
+    <input type=text id=url name=url />
+    <button type=submit>Play it!</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <h1 id=movies>Movies</h1>
+
+  <ul class="movie-container">
+  {% for movie in movies %}
+    <li class="movie-row"><a class="movie" href="/play/{{ movie }}">{{ movie }}</a></li>
+  {% endfor %}
+  </ul>
+{% endblock %}
