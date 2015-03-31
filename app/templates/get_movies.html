@@ -1,10 +1,10 @@
 {% extends 'layout.html' %}
 {% block content %}
+  <a href="/regen_movies">Refresh Movie List</a>
   <h1 id=movies>Movies</h1>
-
   <ul class="movie-container">
   {% for movie in movies %}
-    <li class="movie-row"><a class="movie" href="/play/{{ movie }}">{{ movie }}</a></li>
+    <li class="movie-row"><a class="movie" href="/play/{{ movie['id'] }}">{{ movie['name'] }}</a></li>
   {% endfor %}
   </ul>
 {% endblock %}

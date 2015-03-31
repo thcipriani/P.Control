@@ -1,11 +1,21 @@
 {% extends 'layout.html' %}
 {% block content %}
-  <h1 id=controls>Controls</h1>
+  {% if playing %}
   <ul>
-    <li><a href="/stop">STOP</a></li>
-    <li><a href="/pause">PAUSE</a></li>
-    <li><a href="/vol_down">DOWN</a></li>
-    <li><a href="/vol_up">UP</a></li>
+    <li><h1 id=controls>Controls</h1></li>
+    <li><a href="/stop">Stop</a></li>
+    {% if paused %}
+    <li><a href="/pause">Play</a></li>
+    {% else %}
+    <li><a href="/pause">Pause</a></li>
+    {% endif %}
+    <ul>
+        <li><h2>Volume<h2></li>
+        <li><a href="/vol_up">Up</a></li>
+        <li><a href="/vol_down">Down</a></li>
+    </ul>
   </ul>
-  <hr>
+  {% else %}
+  <h1>Nothing Playing...</h1>
+  {% endif %}
 {% endblock %}

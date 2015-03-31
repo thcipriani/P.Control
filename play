@@ -1,0 +1,7 @@
+#!/bin/bash
+# Clears the background for omxplayer.
+# The -b command is incompatible with the -z command
+
+sudo sh -c "TERM=linux setterm -foreground black -clear -cursor off >/dev/tty0"
+omxplayer -z "$1" | echo ""
+sudo sh -c "TERM=linux setterm -foreground white -clear -cursor on >/dev/tty0"

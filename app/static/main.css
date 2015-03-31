@@ -435,25 +435,18 @@ body {
   color: #212121;
 }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background: gainsboro;
-}
+nav ul { background: gainsboro; }
 
-nav ul li a { text-decoration: none; }
-
-.movie-container {
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.movie-row { border-bottom: 1px solid #ccc; }
+ul li { border-bottom: 1px solid #ccc; }
 
-.movie {
-  display: block;
-  padding: 0.5em;
+ul li a {
   text-decoration: none;
+  display: block;
+  padding: 0.5em 0 0.5em 0.5em;
 }
