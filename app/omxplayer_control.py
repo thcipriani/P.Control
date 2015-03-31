@@ -28,12 +28,16 @@ def is_paused():
         return props.PlaybackStatus() == 'Paused'
     except dbus.DBusException:
         return False
+    except IOError:
+        return False
 
 def is_playing():
     try:
         props = get_props()
         return props.PlaybackStatus() in playing
     except dbus.DBusException:
+        return False
+    except IOError:
         return False
 
 def get_dbus():
