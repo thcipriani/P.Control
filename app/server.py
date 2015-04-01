@@ -37,6 +37,8 @@ def regen_movies():
 
 @app.route('/play/<int:movie_id>')
 def play(movie_id):
+    if omxplayer_control.is_playing() or omxplayer_control.is_paused():
+        omxplayer_control.stop()
     movies.play_movie(movie_id)
     return redirect(url_for('index'))
 
